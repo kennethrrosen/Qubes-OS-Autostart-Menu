@@ -1,6 +1,8 @@
 # Qubes-OS-Autostart-Menu
 Qubes OS Autostart Menu
 
+By not autostarting any qubes on boot, you can maintain a leaner and faster startup.
+
 This guide will help you create an autostart script for Qubes OS using Zenity in dom0. The script will allow you to select which group of qubes to start upon system startup. We'll create a .desktop file and a .sh script in the ~/.config/autostart/ folder. If you don't have an autostart folder or Zenity installed, we'll guide you through the installation process.
 
 ### Step 1: Install Zenity
@@ -34,10 +36,16 @@ declare -a comms_qube=("comms-vm1" "comms-vm2")
 ```
 ### Step 4: Copy the .desktop and .sh files to dom0
 
-In your AppVM, run the following command to copy the modified qubes-autostart-menu.desktop and autostart.sh files to the dom0 ~/.config/autostart/ folder:
+In dom0, run the following command to copy the modified qubes-autostart-menu.desktop file from your AppVM to the dom0 ~/.config/autostart/ folder:
 ```
-[user@your_appvm ~]$ qvm-copy-to-vm dom0 qubes-autostart-menu/qubes-autostart-menu.desktop qubes-autostart-menu/autostart.sh
+qvm-run --pass-io your_appvm 'cat /path/to/qubes-autostart-menu/qubes-autostart-menu.desktop' > ~/.config/autostart/qubes-autostart-menu.desktop
 ```
+Similarly, copy the modified autostart.sh file from your AppVM to the dom0 ~/.config/autostart/ folder:
+```
+qvm-run --pass-io your_appvm 'cat /path/to/qubes-autostart-menu/autostart.sh' > ~/.config/autostart/autostart.sh
+```
+Replace your_appvm with the name of your AppVM, and /path/to/qubes-autostart-menu with the actual path to the folder containing the qubes-autostart-menu.desktop and autostart.sh files in your AppVM.
+
 In dom0, run the following command to move the received files to the ~/.config/autostart/ folder:
 ```
 mv ~/QubesIncoming/your_appvm/qubes-autostart-menu.desktop ~/.config/autostart/
