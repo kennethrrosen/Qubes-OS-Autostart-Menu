@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=QubesOS Autostart Menu
+Comment=Run dialogue box for system VMs startup
+Exec=/home/user/.config/autostart/autostart.sh
+Icon=system-run
+Terminal=false
+Type=Application
