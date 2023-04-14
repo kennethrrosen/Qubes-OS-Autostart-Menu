@@ -1,5 +1,5 @@
 # QubesOS Autostart Menu
-By not autostarting any qubes on boot, you can maintain a leaner and faster startup.
+By not autostarting any qubes on boot, you can maintain a leaner and faster startup. You'll also want to update your Grub configuration, following [this](https://www.qubes-os.org/doc/autostart-troubleshooting/) guide.
 
 This guide will help you create an autostart script for Qubes OS using Zenity in dom0. The script will allow you to select which group of qubes to start upon system startup. We'll create a .desktop file and a .sh script in the ~/.config/autostart/ folder. If you don't have an autostart folder or Zenity installed, we'll guide you through the installation process.
 
