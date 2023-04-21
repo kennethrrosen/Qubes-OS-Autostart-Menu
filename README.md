@@ -19,7 +19,7 @@ mkdir -p ~/.config/autostart
 
 Clone or download this repository to an AppVM (replace your_appvm with the name of your AppVM):
 ```
-[user@your_appvm ~]$ git clone https://github.com/yourusername/qubes-autostart-menu.git
+[user@your_appvm ~]$ git clone https://github.com/kennethrrosen/Qubes-OS-Autostart-Menu.git
 ```
 Edit the qubes-autostart-menu.desktop file in the repository and replace user with your username:
 ```
@@ -36,7 +36,7 @@ declare -a comms_qube=("comms-vm1" "comms-vm2")
 
 In dom0, run the following command to copy the modified qubes-autostart-menu.desktop file from your AppVM to the dom0 ~/.config/autostart/ folder:
 ```
-qvm-run --pass-io your_appvm 'cat /path/to/qubes-autostart-menu/qubes-autostart-menu.desktop' > ~/.config/autostart/qubes-autostart-menu.desktop
+qvm-run --pass-io your_appvm 'cat /path/to/Qubes-OS-Autostart-Menu/qubes-autostart-menu.desktop' > ~/.config/autostart/qubes-autostart-menu.desktop
 ```
 Similarly, copy the modified autostart.sh file from your AppVM to the dom0 ~/.config/autostart/ folder:
 ```
