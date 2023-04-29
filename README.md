@@ -44,13 +44,6 @@ qvm-run --pass-io your_appvm 'cat /path/to/qubes-autostart-menu/autostart.sh' > 
 ```
 Replace your_appvm with the name of your AppVM, and /path/to/qubes-autostart-menu with the actual path to the folder containing the qubes-autostart-menu.desktop and autostart.sh files in your AppVM.
 
-In dom0, run the following command to move the received files to the ~/.config/autostart/ folder:
-```
-mv ~/QubesIncoming/your_appvm/qubes-autostart-menu.desktop ~/.config/autostart/
-mv ~/QubesIncoming/your_appvm/autostart.sh ~/.config/autostart/
-```
-Replace your_appvm with the name of your AppVM.
-
 ### Step 5: Make the script executable
 
 Run the following command in dom0 to make the script executable:
